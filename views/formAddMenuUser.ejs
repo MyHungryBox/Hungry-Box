@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add pesanan</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/menuusers">Daftar Pesanan</a></li>
+            <li><a href="/menus">Daftar Menu</a></li>
+        </ul>
+    </nav>
+    <h1 class="title">Buat Pesanan</h1>
+    <form action="/menuusers/add/<%= menu.id %>" method="POST">
+        <h2 class="subtitle"><%= menu.name %> </h2>
+        <hp class="subtitle"><%= menu.description %> </p>
+        <label for="">Tanggal</label>
+        <input type="date" name="delivery_date">
+        <input type="submit" value="Tambah Pesanan">
+    </form>
+</body>
+</html>

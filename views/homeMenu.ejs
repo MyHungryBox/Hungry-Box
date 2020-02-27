@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/menuusers">Daftar Pesanan</a></li>
+        <li><a href="/menus">Daftar Menu</a></li>
+      </ul>
+    </nav>
+    <div class="container">
+      <section class="section">
+        <div class="columns">
+          <div class="column is-half">
+            <form action="/students" method="GET">
+              <label class="label">Search </label>
+              <input class="input" type="text" name="keyword" />
+              <br />
+              <br />
+              <input class="button is-primary" value="Search" type="submit" />
+            </form>
+          </div>
+        </div>
+
+        <h1 class="title">MENU</h1>
+        <a class="button is-outlined is-primary" href="/menus/add">Add</a>
+        <table class="table is-bordered">
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Menu Type</th>
+            <th>Image</th>
+          </tr>
+
+          <% menus.forEach(menu => { %>
+          <tr>
+            <td><%= menu.id %></td>
+            <td><%= menu.name %></td>
+            <td><%= menu.description %></td>
+            <td><%= menu.price %></td>
+            <td><%= menu.menu_type %></td>
+            <td>
+              <img
+                src="<%= menu.img_url  %> "
+                width="100"
+                height="100"
+                alt=""
+              />
+            </td>
+          </tr>
+          <% }); %>
+        </table>
+      </section>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('partials/header.ejs') %>
+    <title>Register</title>
+</head>
+
+<body>
+    <div class="container">
+        <%- include('partials/navbar.ejs') %>
+        <section class="section hero">
+            <div class="hero-body">
+                <div class="container">
+                    <div class="columns is-centered">
+                        <div class="column is-5-tablet is-4-desktop is-4-widescreen">
+                            <form action="/users/register" method="post" class="box">
+                                <div class="field">
+                                    <label for="" class="label">Name</label>
+                                    <div class="control has-icons-left">
+                                        <input type="text" placeholder="e.g. Bob Smith" class="input" name="name"
+                                            id="name" required>
+                                        <span class="icon is-small is-left">
+                                            <i class="fa fa-user"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label for="" class="label">Email</label>
+                                    <div class="control has-icons-left">
+                                        <input type="email" placeholder="e.g. bobsmith@gmail.com" class="input"
+                                            name="email" id="email" required>
+                                        <span class="icon is-small is-left">
+                                            <i class="fa fa-envelope"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label for="" class="label">Password</label>
+                                    <div class="control has-icons-left">
+                                        <input name="password" id="password" type="password" placeholder="*******"
+                                            class="input" required>
+                                        <span class="icon is-small is-left">
+                                            <i class="fa fa-lock"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <button class="button is-success" type="submit">
+                                        Sign Up
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>

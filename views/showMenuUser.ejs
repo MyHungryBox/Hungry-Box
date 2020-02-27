@@ -1,0 +1,39 @@
+<html lang="en">
+
+<head>
+    <%- include('partials/header.ejs')  %>
+    <title>Buat Pesanan</title>
+</head>
+
+<body>
+    <div class="container">
+        <section class="section">
+            <div class="columns is-centered">
+                <div class="column is-half">
+                    <div class="section">
+                        <div class="card">
+                            <div class="card-image">
+                                <figure class="image is-4by3">
+                                    <img src="<%= result.Menu.img_url %>" alt="Placeholder image">
+                                </figure>
+                            </div>
+                            <div class="card-content">
+                                <div class="media">
+                                    <div class="media-content">
+                                        <p class="title is-4"><%= result.Menu.name %></p>
+                                        <p class="subtitle is-6"><%= formatRupiah(result.Menu.price) %></p>
+                                    </div>
+                                </div>
+                                <div class="content">
+                                    <%= result.Menu.description %>
+                                    <hr>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+        </section>
+</body>
+
+</html>

@@ -11,34 +11,32 @@
     <%- include('partials/navbar.ejs') %>
     <section class="section">
       <h1 class="title">Selamat Datang di HungryBox<%=  name ? ', ' + name + '.' : '.' %> </h1>
-      <h2 class="subtitle">Daftar Menu</h2>
-      <table class="table is-striped is-bordered">
-        <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Description</th>
-          <th>Price</th>
-          <th>Menu Type</th>
-          <th>Image</th>
-          <th>Action</th>
-        </tr>
-
+      <h2 class="subtitle">Pilih menu terbaik kami.</h2>
+      <div class="container-grid">
         <% menus.forEach(menu => { %>
-        <tr>
-          <td><%= menu.id %></td>
-          <td><%= menu.name %></td>
-          <td><%= menu.description %></td>
-          <td><%= menu.price %></td>
-          <td><%= menu.menu_type %></td>
-          <td>
-            <img src="<%= menu.img_url  %> " width="100" height="100" alt="" />
-          </td>
-          <td>
-            <a href="/menuusers/add/<%= menu.id %>">Pesan</a>
-          </td>
-        </tr>
-        <% }); %>
-      </table>
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <img src="<%= menu.img_url %>" alt="Placeholder image">
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="media">
+              <div class="media-content">
+                <p class="title is-4"><%= menu.name %></p>
+                <p class="subtitle is-6"><%= formatRupiah(menu.price) %></p>
+              </div>
+            </div>
+            <div class="content">
+              <%= menu.description %>
+              <hr>
+              <div class="buttons">
+                <a href="/menuusers/add/<%= menu.id  %> " class="button is-fullwidth is-primary">Pesan</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% }) %>
     </section>
   </div>
 </body>

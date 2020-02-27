@@ -28,6 +28,16 @@ class MenuController {
                 res.send(err)
             })
     }
+
+    static delete(req, res) {
+        const id = +req.params.id
+
+        Menu.destroy({ where: { id } }).then(result => {
+            res.redirect('/menus')
+        }).catch(err => {
+            res.send(err)
+        })
+    }
 }
 
 module.exports = MenuController

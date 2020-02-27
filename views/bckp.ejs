@@ -1,0 +1,38 @@
+<html lang="en">
+
+<head>
+    <%- include('partials/header.ejs')  %>
+    <title>Buat Pesanan</title>
+</head>
+
+<body>
+    <div class="container">
+        <%- include('partials/navbar.ejs') %>
+        <section class="section">
+            <div class="columns">
+                <div class="column is-4">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-4by3">
+                                <img src="<%= menu.img_url %>" alt="Placeholder image">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-content">
+                                    <p class="title is-4"><%= menu.name %></p>
+                                    <p class="subtitle is-6"><%= formatRupiah(menu.price) %></p>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <%= menu.description %>
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <input type="date">
+        </section>
+</body>
+
+</html>

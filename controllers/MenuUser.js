@@ -4,7 +4,7 @@ class MenuUserController {
   static findAll(req, res) {
     MenuUser.findAll({ include: [Menu] })
       .then(result => {
-        res.render('listMenuUser', { result })
+        res.render('listMenuUser', { result, isLogin: req.session.isLogin })
       })
       .catch(err => {
         res.send(err)
@@ -15,7 +15,7 @@ class MenuUserController {
 
     Menu.findByPk(id)
       .then(result => {
-        res.render('formAddMenuUser', { menu: result })
+        res.render('formAddMenuUser', { menu: result, isLogin: req.session.isLogin })
       })
       .catch(err => {
         res.send(err)

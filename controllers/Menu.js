@@ -15,6 +15,12 @@ class MenuController {
             }
         })
             .then(result => {
+
+                for (let i = 0; i < result.length; i++) {
+                    result[i].setDataValue(`formattedPrice`, result[i].getPrice());
+                    console.log(result[i].getPrice())
+                }
+
                 res.render('homeMenu', { menus: result, isLogin: req.session.isLogin })
             })
     }

@@ -3,21 +3,21 @@
 
 <head>
     <%- include('partials/header.ejs')  %>
-    <title>Buat Menu</title>
+    <title>Edit Menu</title>
 </head>
 
 <body>
     <div class="container">
         <%- include('partials/navbar.ejs') %>
         <section class="section">
-            <h1 class="title">ADD MENU</h1>
+            <h1 class="title">EDIT MENU</h1>
             <div class="columns">
                 <div class="column is-half">
-                    <form action="/menus/add" method="post">
+                    <form action="/menus/edit/<%= result.id %>" method="post">
                         <div class="field">
                             <label class="label">Name</label>
                             <div class="control">
-                                <input class="input" type="text" name="name" id="name" placeholder="Name">
+                                <input class="input" type="text" name="name" id="name" placeholder="Name" value="<%= result.name %> ">
                             </div>
                         </div>
 
@@ -25,14 +25,14 @@
                             <label class="label">Description</label>
                             <div class="control">
                                 <input class="input" type="text" name="description" id="description"
-                                    placeholder="Description">
+                                    placeholder="Description" value="<%= result.description  %> "> 
                             </div>
                         </div>
 
                         <div class="field">
                             <label class="label">Price</label>
                             <div class="control">
-                                <input class="input" type="price" name="price" id="price" placeholder="Price">
+                                <input class="input" type="price" name="price" id="price" placeholder="Price" value="<%= result.price %> ">
                             </div>
                         </div>
 
@@ -40,15 +40,15 @@
                             <label class="label">menu_type</label>
                             <div class="control">
                                 <label class="radio">
-                                    <input type="radio" name="menu_type" value="Chicken">
+                                    <input class="is-checkradio" id="menu_type" type="radio" name="menu_type" value="Chicken"<%= result.menu_type === 'Chicken' ? 'checked' : ''%>>
                                     Chicken
                                 </label>
                                 <label class="radio">
-                                    <input type="radio" name="menu_type" value="Meat">
+                                    <input class="is-checkradio" id="menu_type" type="radio" name="menu_type" value="Meat"<%= result.menu_type === 'Meat' ? 'checked' : ''%>>
                                     Meat
                                 </label>
                                 <label class="radio">
-                                    <input type="radio" name="menu_type" value="Fish">
+                                    <input class="is-checkradio" id="menu_type" type="radio" name="menu_type" value="Fish"<%= result.menu_type === 'Fish' ? 'checked' : ''%>>
                                     Fish
                                 </label>
 
@@ -59,11 +59,11 @@
                         <div class="field">
                             <label class="label">Img Url</label>
                             <div class="control">
-                                <input class="input" type="text" name="img_url" id="img_url" placeholder="img_url">
+                                <input class="input" type="text" name="img_url" id="img_url" placeholder="img_url" value="<%= result.img_url %> ">
                             </div>
                         </div>
 
-                        <input class="button is-primary" type="submit" value="Add Menu">
+                        <input class="button is-primary" type="submit" value="Edit Menu">
                     </form>
                 </div>
             </div>
